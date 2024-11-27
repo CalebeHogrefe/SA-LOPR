@@ -1,1 +1,43 @@
+algoritmo "MelhoriaProcessosProdutivos_Tigre"
+var
+   maquina: caractere
+   capacidadeEsperada, producaoReal, eficiencia: real
+inicio
+   escreval("==== Sistema de Monitoramento de Processos Produtivos ====")
+   
+   // Coletar dados da máquina
+   escreva("Digite o nome da máquina: ")
+   leia(maquina)
+   escreva("Digite a capacidade esperada de produção por hora (em unidades): ")
+   leia(capacidadeEsperada)
+   escreva("Digite a produção real da máquina por hora (em unidades): ")
+   leia(producaoReal)
+   
+   // Calcular eficiência
+   se capacidadeEsperada > 0 entao
+      eficiencia <- (producaoReal / capacidadeEsperada) * 100
+      
+      escreval("==== Relatório de Eficiência ====")
+      escreval("Máquina: ", maquina)
+      escreval("Capacidade Esperada: ", capacidadeEsperada:0:2, " unidades/hora")
+      escreval("Produção Real: ", producaoReal:0:2, " unidades/hora")
+      escreval("Eficiência: ", eficiencia:0:2, "%")
+      
+      // Analisar a eficiência
+      se eficiencia >= 90 entao
+         escreval("Status: Excelente! O processo está altamente eficiente.")
+      senao
+         se eficiencia >= 70 e eficiencia < 90 entao
+            escreval("Status: Adequado. Pode ser interessante revisar processos para alcançar maior eficiência.")
+         senao
+            escreval("Status: Ineficiente! Recomenda-se realizar uma análise detalhada dos seguintes fatores:")
+            escreval("1. Verificar manutenção da máquina.")
+            escreval("2. Avaliar treinamento dos operadores.")
+            escreval("3. Analisar a qualidade da matéria-prima utilizada.")
+         fimse
+      fimse
+   senao
+      escreval("Erro: A capacidade esperada deve ser maior que zero.")
+   fimse
+fimalgoritmo
 
