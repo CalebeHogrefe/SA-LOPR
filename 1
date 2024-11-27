@@ -1,1 +1,21 @@
+algoritmo "ControleManutencao_Tigre"
+var
+   equipamento: caractere
+   ultimaManutencao, diasParaManutencao: inteiro
+inicio
+   escreva("Digite o nome do equipamento: ")
+   leia(equipamento)
+   escreva("Digite os dias desde a última manutenção: ")
+   leia(ultimaManutencao)
+   
+   // Calcular tempo restante para a próxima manutenção (intervalo padrão: 30 dias)
+   diasParaManutencao <- 30 - ultimaManutencao
+   
+   escreval("Equipamento: ", equipamento)
+   se diasParaManutencao > 0 entao
+      escreval("Dias para a próxima manutenção: ", diasParaManutencao)
+   senao
+      escreval("Manutenção atrasada! Realizar imediatamente.")
+   fimse
+fimalgoritmo
 
